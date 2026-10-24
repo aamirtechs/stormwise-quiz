@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StormWise Quiz: Extreme Weather Safety</title>
+<meta name="description" content="A small educational quiz about extreme weather safety in Switzerland: flooding, heatwaves and severe thunderstorms.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛈️</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1 id="app-title">StormWise Quiz</h1>
+    <p id="app-subtitle">Extreme weather safety for students in Switzerland</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Home / scenario picker -->
+  <section id="screen-home">
+    <p id="app-intro" class="intro"></p>
+    <div id="scenario-grid" class="grid"></div>
+    <p class="note">Sample learning content. Always follow the latest warnings and instructions from MeteoSwiss and your local authorities.</p>
+  </section>
+
+  <!-- Quiz -->
+  <section id="screen-quiz" hidden>
+    <button class="link-btn" id="btn-quit" type="button">&larr; All scenarios</button>
+    <h2 id="quiz-scenario-title"></h2>
+    <div class="progress" aria-hidden="true"><div id="progress-bar"></div></div>
+    <p id="progress-text" class="progress-text"></p>
+    <div class="card">
+      <h3 id="question-text"></h3>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback" hidden>
+        <p id="feedback-verdict" class="verdict"></p>
+        <p id="feedback-explanation"></p>
+        <p class="source-line">Source: <a id="feedback-source" href="#" target="_blank" rel="noopener"></a></p>
+      </div>
+      <button id="btn-next" class="btn primary" type="button" hidden>Next question</button>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="screen-results" hidden>
+    <div class="card center">
+      <h2 id="result-title"></h2>
+      <p id="result-score" class="big-score"></p>
+      <p id="result-message"></p>
+      <p class="source-line">Official guidance: <a id="result-source" href="#" target="_blank" rel="noopener"></a></p>
+      <div class="row">
+        <button id="btn-restart" class="btn primary" type="button">Restart this scenario</button>
+        <button id="btn-home" class="btn" type="button">Choose another scenario</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Built as a learning prototype. In a real emergency in Switzerland, call <strong>144</strong> (medical) or <strong>112</strong> (general emergency).</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
